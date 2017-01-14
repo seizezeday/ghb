@@ -1,11 +1,19 @@
 var React = require('react');
 
-class Home extends React.Component{
+var Home = React.createClass({
+  render : function(){
+    return (
     
-    render(){
-        return (
-        <div> Home! </div>
-                
-        );
-    }
-}
+    <div> Home!!!!
+      
+      
+      </div>
+      
+    
+    )
+  }
+});
+  
+
+
+module.exports = Home;
