@@ -2,21 +2,43 @@ var React = require('react');
 var transparentBg = require('../styles');
 
 var PromptContainer = React.createClass({
+  getInitialState: function() {
+    return {
+      username: ''
+    }
+  },
+
+  onUpdateUser: function(e){
+    this.setState({
+      username: e.target.value
+    })
+  },
+
+  onSubmitUser : function(e){
+    e.preventDefault();
+  },
+
+
+
+
   render : function(){
     console.log(this);
     console.log(transparentBg);
     return (
 
-    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg.transparentBg}>
+    <div className="jumbotron col-sm-6 col-sm-offset-3 text-center"
+      style={transparentBg.transparentBg}>
 
 
     <h1>{this.props.route.header}</h1>
     <div className="col-sm-12">
-      <form>
+      <form onSubmit={this.onSubmitUser}>
         <div className="form-group">
           <input
             className="form-control"
             placeholder="Github Username"
+            onChange={this.onUpdateUser}
+            value={this.state.username}
             type="text"/>
         </div>
         <div className="form-group col-sm-4 col-sm-offset-4">
