@@ -1,5 +1,7 @@
 const React = require('react');
 var transparentBg = require('../styles');
+
+
 var PropTypes = React.PropTypes;
 
 const Prompt = (props) => {

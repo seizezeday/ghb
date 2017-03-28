@@ -6,16 +6,24 @@ var ConfirmBattleContainer =  React.createClass({
     router: React.PropTypes.object.isRequired
   },
 
-  getInitialState: () => {
+  getInitialState: function () {
     return {
-      isLoading: true,
+      isLoading: false,
       playerInfo: []
     }
   },
+  componentDidMount: function () {
+  //var query = this.props.location.query;
+  //console.log(query);
+  },
 
-  render: () => {
+
+  render: function() {
     return (
-      <ConfirmBattle/>
+      <ConfirmBattle
+        isLoading={this.state.isLoading}
+        playersInfo={this.state.playerInfo}
+      />
     );
   }
 
